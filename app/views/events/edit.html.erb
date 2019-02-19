@@ -1,0 +1,33 @@
+ <br> <br> <br>
+ <div class=container>
+    <%= form_tag url_for(action: 'update'), method: "patch", multipart: true do %>
+
+      <h3><%= label_tag 'title' %></h3>
+      <%= text_field_tag 'title',@t %>
+      <br /> <br />
+
+      <h3><%= label_tag 'description'%></h3>
+      <%= text_field_tag 'description', @c %>
+      <br /> <br />
+
+      <h3><%= label_tag 'price'%></h3>
+      <%= text_field_tag 'price', @c %>
+      <br /> <br />
+
+       <h3><%= label_tag 'location'%></h3>
+      <%= text_field_tag 'location', @c %>
+      <br />
+         <h3><%= label_tag 'start_date'%></h3>
+      <%= text_field_tag 'start_date', @c %>
+      <br />
+         <h3><%= label_tag 'duration'%></h3>
+      <%= text_field_tag 'duration', @c %>
+      <br />
+       <%= file_field_tag :avatar %><br>
+     
+      <%= submit_tag "Edit " %>
+
+    <% end %>
+
+    <br />
+    <a href="/">Back to list of gossip</a></div>

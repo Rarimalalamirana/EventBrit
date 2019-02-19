@@ -1,0 +1,10 @@
+HTTrack3.49-2 launched on Thu, 14 Feb 2019 08:22:44 at doc.ubuntu-fr.org
+(httrack doc.ubuntu-fr.org )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+08:22:50	Error: 	"-> []" (403) at link doc.ubuntu-fr.org/ (from primary/primary)
+08:22:50	Warning: 	No data seems to have been transferred during this session! : restoring previous one!

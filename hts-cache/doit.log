@@ -1,0 +1,8 @@
+doc.ubuntu-fr.org
+File generated automatically on Thu, 14 Feb 2019 08:22:44, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

@@ -1,0 +1,18 @@
+  .form-control{
+    width: 500px;
+  }
+  .form{
+    font-size: 20px;
+  }
+  .jumbotron1{
+    background-image: url('event.jpeg');
+   color:white;
+  }
+  body{
+  	background-color: grey;
+
+  }
+  .navbar{
+  	font-size: 20px;
+  	height: 80px;
+  }

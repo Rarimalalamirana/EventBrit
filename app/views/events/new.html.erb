@@ -1,0 +1,20 @@
+ <br> <br> <br> 
+<div class="form">
+<%= form_for @event, url: {action: "create"}, html: {class: "nifty_form"}, multipart: true do |f| %>
+    <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+    <%= f.label :duration %>
+  <%= f.text_field :duration %><br>
+    <%= f.label :Start_date %>
+  <%= f.date_field :start_date %><br>
+    <%= f.label :Location %>
+  <%= f.text_field :location %><br>
+    <%= f.label :Price %>
+  <%= f.text_field :price %><br>
+    <%= f.file_field :avatar %><br>
+  <%= f.submit "Create" %>
+<% end %>
+
+</div>

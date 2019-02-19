@@ -44,3 +44,28 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
+
+######### Une configuration que vous devez faire manuellement si vous n’avez pas encore:
+
+#   1. Assurez-vous que vous avez défini les options d'URL par défaut dans vos fichiers d'environnement. Ici
+#      est un exemple de default_url_options approprié pour un environnement de développement
+#      dans config / environnements / development.rb:
+
+#        config.action_mailer.default_url_options = {hôte: 'hôte local', port: 3000}
+
+#      En production,: hôte doit être défini sur l'hôte réel de votre application.
+
+#   2. Vérifiez que vous avez défini root_url sur * quelque chose * dans votre config / routes.rb.
+#      Par exemple:
+
+#        root to: "home # index"
+
+#   3. Assurez-vous d'avoir des messages flash dans app / views / layouts / application.html.erb.
+#      Par exemple:
+
+#        <p class = "notice"> <% = notice%> </ p>
+#        <p class = "alert"> <% = alert%> </ p>
+
+#   4. Vous pouvez copier des vues Devise (à personnaliser) sur votre application en exécutant:
+
+#        rails g devise: vues

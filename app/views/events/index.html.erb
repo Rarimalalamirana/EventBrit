@@ -1,0 +1,36 @@
+ <br> <br> <br>
+ <div class="jumbotron1">
+ 	<h1 class="display-3">Hello!</h1>
+ 	<p class="lead">This is all vent</p>
+
+ </div>
+ <div class="row">
+ 	<% Event.all.each do |f| %>
+ 	<div class="col-md-4">
+ 		<div class="card " style="width: 18rem;">
+
+ 			<div class="card-header">  <%if f.avatar.attached?%>
+ 				<%= image_tag f.avatar, alt: 'avatar' %>
+
+ 				<%else%>
+ 				<p>=== Il n'y a pas encore d'avatar lié à cet evenement ===</p>
+ 				<%end%>
+ 				<br><%= f.title %>
+ 			</div>
+ 			<div class="card-body">
+ 				<h4 class="card-title">Details:<%=  f.description%></h4>
+ 				<p class="card-text">Price:<%= f.price %><br>Location<%= f.location%></p>
+
+ 				<p class="lead">
+ 					<a class="btn btn-primary btn-lg" href="/events/<%= f.id%>"f." role="button">More</a>
+ 				</p>
+ 			</div>
+
+ 		</div>
+ 	</div>
+ 	<% end %>
+ </div>
+
+
+
+
