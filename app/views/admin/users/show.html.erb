@@ -1,0 +1,26 @@
+<br> <br> <br>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: black;" >
+  <ul class="nav navbar_nav">
+  	<li class="nav-item">
+  	 <%= link_to "Utilisateur",admin_users_path,:class =>'nav-link' %>
+  	 <li class="nav-item">
+  	 </li>
+  	 <%= link_to "event",admin_event_submissions_all_path,:class =>'nav-link' %>
+  	</li>
+  </ul>
+</nav>
+<%if @user.avatar.attached?%>
+
+  <%= image_tag @user.avatar, alt: 'avatar'%>
+
+<%else%>
+  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+<%end%>
+<br>
+Nom:  <%= @user.last_name%><br>
+Prenom:   <%= @user.first_name%><br>
+Description:   <%= @user.description%><br>
+Email:   <%= @user.email%><br>
+ <%= link_to "Delete",admin_user_path(@user.id), method: "delete",class: "btn btn-primary", style: "display: inline",:data=>{:confirm => "Voulez vous vraiment effacer cet utilisateur"}%>
+
+   

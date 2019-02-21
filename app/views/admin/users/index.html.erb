@@ -1,0 +1,30 @@
+<br><br><br>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: black;" >
+  <ul class="nav navbar_nav">
+  	<li class="nav-item">
+  	 <%= link_to "Utilisateur",admin_users_path,:class =>'nav-link' %>
+  	 </li>
+  	 <li class="nav-item">
+  	 <%= link_to "event",admin_event_submissions_all_path,:class =>'nav-link' %>
+  	  	 </li>
+  </ul>
+</nav>
+<h1>Voici tous les utilisateurs:</h1>
+<% @user.each do |f| %>
+<ul>
+	<li>
+<%if f.avatar.attached? %>
+
+  <%= image_tag f.avatar, alt: 'avatar',:class=>"img"%>
+
+<%else%>
+  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+<%end%>
+
+
+	<%= f.last_name %>
+<a class="btn btn-info btn-lg" href="/admin/users/<%= f.id%>"f." role="button">Plus..</a>
+</li>
+</ul>
+<% end %>
+

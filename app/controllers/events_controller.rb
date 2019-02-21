@@ -1,8 +1,12 @@
 class EventsController < ApplicationController
 	before_action:current_user,only:[:subscride,:new]
 	def index
-		@event =Event.all
-
+	 @event=[]
+	Event.all.each do |f|
+     if f.validated? == true && f.user != nil
+     @event << f
+end
+end
 	end
 	def show
 	 @a =params[:id] 
@@ -19,14 +23,16 @@ class EventsController < ApplicationController
 	end
 	end
 	def create
+
          @currentUser=current_user
-		a= params.require(:event).permit(:title,:description,:duration,:location,:price,:start_date)	
+		a= params.require(:event).permit(:avatar,:title,:description,:duration,:location,:price,:start_date)	
 		@event =Event.new(a)
-		   @event.avatar.attach(params[:avatar])
 		@event.user =@currentUser
+		
 		if @event.valid?
 			@event.save
-			redirect_to event_path(@event.id)
+		
+			redirect_to events_path
 		else
 			render :new
 		end
@@ -64,7 +70,7 @@ rescue Stripe::CardError => e
 		@event.update(location:params[:location],title:params[:title],description:params[:description],start_date:params[:start_date],duration:params[:duration],price:params[:price])
          @event.avatar.attach(params[:avatar])
          @event.save
-           flash.now[:notice] ="Vouvenez de modifir votre evenement"
+           flash.now[:notice] ="Vous venez de modifir votre evenement"
          redirect_to event_path(@a)
 
 	end

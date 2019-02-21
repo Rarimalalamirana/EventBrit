@@ -13,3 +13,55 @@
  *= require_tree .
  *= require_self
  */
+
+  .form{
+    font-size: 20px;
+  }
+  .navbar{
+  	font-size: 20px;
+  	height: 60px;
+
+  }
+  .field{
+    height: 70px;
+  }
+  .center{
+    text-align: center;
+    font-style: italic;
+    align-content: center;
+  }
+  input{
+    width:400px;
+  }
+  .card{
+width:300px;
+    margin: auto;
+ background-color: gray;
+  }
+  img{
+    width: px;
+    height: 200px
+  }
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.navbar-header{
+	font-size: 40px;
+	font-family: "lucida console";
+	 font-style: oblique;
+}
+.remember{
+display: inline-block;
+}
+.label_r{
+  margin-left: -150px; 
+}
+.img{
+  width: 100px;
+  height: 100px;
+}

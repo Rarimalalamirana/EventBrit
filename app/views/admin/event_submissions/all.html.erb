@@ -1,8 +1,20 @@
+
  <br> <br> <br>
+ <nav class="navbar navbar-expand-lg navbar-light " style="background-color: black;" >
+  <ul class="nav navbar_nav">
+  	<li class="nav-item">
+  	 <%= link_to "Utilisateur",admin_users_path,:class =>'nav-link' %>
+  	 	</li>
+  	 	<li class="nav-item">
+  	 <%= link_to "event",admin_event_submissions_all_path,:class =>'nav-link' %>
+  	</li>
+  </ul>
+</nav>
  <div class="center">
  	<h1 class="display-3"">Eventbrint</h1>
  
- 	<h3>Ceci est un projet sur les evenements les voici</h3>
+ 	<h3>Welcome</h3>
+ 	<h4>Les evenement à valider </h4>
 	</div>
  </div>
  <div class="row">
@@ -11,6 +23,11 @@
  		<div class="card " style="width: 35rem;">
 
  			<div class="card-header"> 
+ 				<% if f.validated? %>
+ 				<h3>Valide</h3>
+ 				<% else %>
+ 				<h3>Non valider</h3>
+ 				<% end %>
  			 <%if f.avatar.attached?%>
  				<%= image_tag f.avatar, alt: 'avatar'%>
 
@@ -24,15 +41,10 @@
  				<p class="card-text">Price:<%= f.price %><br>Location:<%= f.location%></p>
 
  				<p class="lead">
- 					<a class="btn btn-info btn-lg" href="/events/<%= f.id%>"f." role="button">Plus..</a>
+ 					<a class="btn btn-info btn-lg" href="/admin/event_submissions/<%= f.id%>"f." role="button">Plus..</a>
  				</p>
  			</div>
 
  		</div>
  	</div>
  	<% end %>
-
-
-
-
-

@@ -1,4 +1,10 @@
  <br> <br> <br> 
+ <% if @event.errors.any? %>
+ <% @event.errors.full_messages.each do |f| %>
+
+ <p> <%= f %></p>
+ <% end %>
+ <% end %>
 <div class="form">
 <%= form_for @event, url: {action: "create"}, html: {class: "nifty_form"}, multipart: true do |f| %>
     <%= f.label :title %>
