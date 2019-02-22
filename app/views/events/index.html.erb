@@ -1,36 +1,52 @@
- <br> <br> <br>
- <div class="center">
- 	<h1 class="display-3"">Eventbrint</h1>
- 
- 	<h3>Ceci est un projet sur les evenements les voici</h3>
-	</div>
+<div class="wrapper">
+  <div class="page-header page-header-small">
+    <div class="page-header-image" data-parallax="true" style="background-image: url(../images/bg3.jpg);">
+    </div>
+    <div class="content-center" style="font-style: italic;font-family: 'lucida';">
+      <div class="container">
+        <h1 class="title">EVENT BRINT</h1>
+        <h3>LES EVENEMENTS</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section section-tabs"  style="background-color: gray;">
+  <div class="container">
+    <div class="row">
+      <% @event.each do |f| %>
+      <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+        <p class="category"><%= f.title %></p>
+        <!-- Tabs with Background on Card -->
+        <div class="card">
+          <div class="card-header">
+
+          <%if f.avatar.attached?%>
+          
+          <%= image_tag f.avatar, alt:''%>
+
+          <%else%>
+          <p> Il n'y a pas encore d'image lié à cet evenement </p>
+          <%end%>
+          </div>
+          <div class="card-body">
+            <!-- Tab panes -->
+            <div class="tab-content text-center">
+
+             <p><%=  f.description%></p><br>
+             <p> Price:<%= f.price %></p><br>
+             <p><%= f.location%></p>
+           </div>
+         </div>
+       </div>
+       <!-- End Tabs on plain Card -->
+     </div>
+     <% end %>
+   </div>
  </div>
- <div class="row">
- 	<% @event.each do |f| %>
- 	<div class="col-md-6">
- 		<div class="card " style="width: 35rem;">
+</div>
 
- 			<div class="card-header"> 
- 			 <%if f.avatar.attached?%>
- 				<%= image_tag f.avatar, alt: 'avatar'%>
 
- 				<%else%>
- 				<p>=== Il n'y a pas encore d'avatar lié à cet evenement ===</p>
- 				<%end%>
- 				<br><h2><%= f.title %></h2>
- 			</div>
- 			<div class="card-body">
- 				<h4 class="card-title">Details:<%=  f.description%></h4>
- 				<p class="card-text">Price:<%= f.price %><br>Location:<%= f.location%></p>
 
- 				<p class="lead">
- 					<a class="btn btn-info btn-lg" href="/events/<%= f.id%>"f." role="button">Plus..</a>
- 				</p>
- 			</div>
-
- 		</div>
- 	</div>
- 	<% end %>
 
 
 

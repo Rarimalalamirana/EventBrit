@@ -1,16 +1,75 @@
- <br> <br> <br>
-<h2>your profil</h2>
-<%if @user.avatar.attached?%>
+<body class="profile-page sidebar-collapse">
 
-  <%= image_tag @user.avatar, alt: 'avatar'%>
+	<!-- End Navbar -->
+	<div class="wrapper">
+		<div class="page-header clear-filter" filter-color="orange">
+			<div class="page-header-image" data-parallax="true" style="background-image:url('../images/bg4.jpg');">
+			</div>
+			<div class="container">
+				<div class="photo-container">
 
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
-<br>
-Nom:  <%= @user.last_name%><br>
-Prenom:   <%= @user.first_name%><br>
-Description:   <%= @user.description%><br>
-Email:   <%= @user.email%><br>
 
-    <%= link_to 'edit',edit_user_path,method: :get ,class: "btn btn-primary", style: "display: inline"%>
+					<%if @user.avatar.attached?%>
+
+					<%= image_tag @user.avatar, alt:''%>
+
+					<%else%>
+					<p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+					<%end%>
+
+				</div>
+				<h3 class="title"> <%= @user.last_name%></h3>
+				<p class="category"><%= @user.first_name%></p>
+				<div class="content">
+					<div class="social-description">
+						<h2>Email</h2>
+						<p><%= @user.email%></p>
+					</div>
+					<div class="social-description">
+						<h2>nmbr</h2>
+						<p>Evenement</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<center>	<%= link_to 'edit',edit_user_path,method: :get ,:class=>'btn btn-primary'%></center>
+		<div class="section">
+			<div class="container">
+				<h3 class="title">About me</h3>
+				<h5 class="description"> <%= @user.description%></h5>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<!--   Core JS Files   -->
+ <script src="../js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="../js/core/popper.min.js" type="text/javascript"></script>
+  <script src="../js/core/bootstrap.min.js" type="text/javascript"></script>
+  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+  <script src="../js/plugins/bootstrap-switch.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="../js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+  <script src="../js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+  <script src="../js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
+
+
+   <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+  <script src="assets/js/plugins/bootstrap-switch.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+  <script src="assets/js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+  <script src="assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript"></script>
+</body>

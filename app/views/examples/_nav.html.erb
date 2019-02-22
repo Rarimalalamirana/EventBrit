@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body class="landing-page sidebar-collapse">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top navbar-transparent " color-on-scroll="400">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="/" rel="tooltip" title="Designed by Invision. Coded by Creative Mirana" data-placement="bottom" target="_blank">
+          EventBrint
+        </a>
+        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar top-bar"></span>
+          <span class="navbar-toggler-bar middle-bar"></span>
+          <span class="navbar-toggler-bar bottom-bar"></span>
+        </button>
+      </div>
+     
+    <div class="navbar-translate">
+        <a class="navbar-brand" href="/events/new">
+          New event
+        </a>
+      </div>
+     
+    
+  </div>
+  <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="../assets/img/blurred-image-1.jpg">
+    <ul class="navbar-nav xl-auto">
+       <% if current_user %>
+
+    <li class="nav-item">
+     <a class="nav-link" href="/users/show">
+      <p><i class="now-ui-icons users_circle-08"></i>
+      Profil</p>
+    </a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Sign_out",destroy_user_session_path,method: :delete ,:class =>'nav-link',:data=>{:confirm => "Voulez vous vraiment quitter l application"} %>
+
+  </li>
+
+     <% if current_user.is_admin? == true %>
+  <%= render "./admin/nav" %>
+    <% end %>
+       
+  <% else %>
+  <li class="nav-item">
+   <%= link_to "Sign_up",new_user_registration_path,method: :get ,:class =>'nav-link' %>
+ </li>
+ <li class="nav-item">
+   <%= link_to "Sign_in",new_user_session_path,method: :get ,:class =>'dropdown-item' %> 
+ </li>
+ <% end %>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- End Navbar -->
+
+</div>
+<!--   Core JS Files   -->
+
+</body>
+
+</html>
