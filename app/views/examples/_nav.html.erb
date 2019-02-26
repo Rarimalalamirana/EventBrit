@@ -11,7 +11,7 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="/" rel="tooltip" title="Designed by Invision. Coded by Creative Mirana" data-placement="bottom" target="_blank">
-          EventBrint
+          EventBrite
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
@@ -44,7 +44,8 @@
   </li>
 
      <% if current_user.is_admin? == true %>
-  <%= render "./admin/nav" %>
+      <%= link_to "Administrateur?",admin_root_path,method: :get ,:class =>'nav-link'%>
+
     <% end %>
        
   <% else %>
@@ -52,7 +53,7 @@
    <%= link_to "Sign_up",new_user_registration_path,method: :get ,:class =>'nav-link' %>
  </li>
  <li class="nav-item">
-   <%= link_to "Sign_in",new_user_session_path,method: :get ,:class =>'dropdown-item' %> 
+   <%= link_to "Sign_in",new_user_session_path,method: :get ,:class =>'nav-link' %> 
  </li>
  <% end %>
 

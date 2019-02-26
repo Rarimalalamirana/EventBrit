@@ -1,33 +1,53 @@
- <br> <br> <br>
- <div class=container>
-    <%= form_tag url_for(action: 'update'), method: "patch", multipart: true do %>
 
-      <h3><%= label_tag 'title' %></h3>
-      <%= text_field_tag 'title',@t %>
-      <br /> <br />
+  <div class="wrapper">
+    <div class="page-header clear-filter" filter-color="orange">
+      <div class="page-header-image" data-parallax="true" style="background-image:url('../images/bg4.jpg');">
+      </div>
+      <div class="container">
+        <div class="col-md-4 ml-auto mr-auto">
+          <div class="card card-login card-plain">
+           <%= form_tag url_for(action: 'update'), method: "patch", multipart: true do %>
+           <div class="card-header text-center">
+            <h3>Avenement edit</h3>
+          </div>
+          <div class="input-group no-border input-lg">    
+           <h3><%= label_tag 'title' %></h3>
+           <%= text_field_tag 'title',@t %>
+           <br /> <br />
+         </div>
+         <div class="input-group no-border input-lg">    
 
-      <h3><%= label_tag 'description'%></h3>
-      <%= text_field_tag 'description', @c %>
-      <br /> <br />
+          <h3><%= label_tag 'description'%></h3>
+          <%= text_field_tag 'description', @c %>
+          <br /> <br />
+          <div class="input-group no-border input-lg">    
+            <h3><%= label_tag 'Duration'%></h3>
+            <%= text_field_tag 'duration'%>
+          </div>
+          <div class="input-group no-border input-lg">    
+            <h3><%= label_tag 'Start_date'%></h3>
+            <%= text_field_tag 'start_date'%>
+          </div>
+          <div class="input-group no-border input-lg">    
 
-      <h3><%= label_tag 'price'%></h3>
-      <%= text_field_tag 'price', @c %>
-      <br /> <br />
+            <h3><%= label_tag 'location'%></h3>
+            <%= text_field_tag 'location', @c %>
+          </div>
+          <div class="input-group no-border input-lg">    
 
-       <h3><%= label_tag 'location'%></h3>
-      <%= text_field_tag 'location', @c %>
-      <br />
-         <h3><%= label_tag 'start_date'%></h3>
-      <%= text_field_tag 'start_date', @c %>
-      <br />
-         <h3><%= label_tag 'duration'%></h3>
-      <%= text_field_tag 'duration', @c %>
-      <br />
-       <%= file_field_tag :avatar %><br>
-     
-      <%= submit_tag "Edit " %>
+           <h3><%= label_tag 'price'%></h3>
+           <%= text_field_tag 'price', @c %>
+         </div>
+         <div class="input-group no-border input-lg">    
+          <h3><%= label_tag 'avatar'%></h3>
+          <%= file_field_tag :avatar %>
+          <%= submit_tag "Edit " %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <a href="/">Back to list of gossip</a></div>
+</div>
 
-    <% end %>
-
-    <br />
-    <a href="/">Back to list of gossip</a></div>

@@ -8,29 +8,32 @@
         <div class="card card-login card-plain">
     <%= form_tag url_for(action: 'update'), method: "patch", multipart: true do %>
 <div class="card-header text-center">
-            <h3>SIGN_IN</h3>
+            <h3>Profil</h3>
           </div>
           <div class="input-group no-border input-lg">    
-      <h3><%= label_tag 'last_name' %></h3>
-      <%= text_field_tag 'last_name' %>
-      <br /> <br />
+          <h3><%= label_tag 'last_name' %></h3>
+          <%= text_field_tag 'last_name' %>
 </div>
+   <div class="input-group no-border input-lg">    
       <h3><%= label_tag 'first_name'%></h3>
-      <%= text_field_tag 'first_name' %>
-      <br /> <br />
-
+      <%= text_field_tag 'first_name'  %>
+    </div>
+   <div class="input-group no-border input-lg">    
       <h3><%= label_tag 'Description'%></h3>
       <%= text_field_tag 'description'%>
-      <br /> <br />
+    </div>
+   <div class="input-group no-border input-lg">    
 
        <h3><%= label_tag 'email'%></h3>
+     
       <%= text_field_tag 'email' %>
-      <br />
+  </div>
       <small> plese enter your email </small>
-      <br /> 
+         <div class="input-group no-border input-lg">    
       <h3><%= label_tag 'avatar'%></h3>
         <%= file_field_tag :avatar %>
       <%= submit_tag "Edit " %>
+    </div>
 </div>
 </div>
     <% end %>

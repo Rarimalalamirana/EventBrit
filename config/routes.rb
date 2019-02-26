@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	namespace :admin do
+    root 'event_submissions#index'
     resources :users
     resources :event_submissions, only: [:show,:edit,:index,:destroy,:update]
 		root 'event_submissions#index'

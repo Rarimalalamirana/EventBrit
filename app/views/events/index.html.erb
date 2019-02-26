@@ -1,28 +1,29 @@
 <div class="wrapper">
   <div class="page-header page-header-small">
-    <div class="page-header-image" data-parallax="true" style="background-image: url(../images/bg3.jpg);">
+    <div class="page-header-image" data-parallax="true" style="background-image: url(../images/bg12.jpg);">
     </div>
     <div class="content-center" style="font-style: italic;font-family: 'lucida';">
       <div class="container">
-        <h1 class="title">EVENT BRINT</h1>
+        <h1 class="title">EVENT BRITE</h1>
         <h3>LES EVENEMENTS</h3>
+        <h4>Le destin préside à tous les événements du monde.Il suffit de savoir s'y prendre pour faire tenir beaucoup de choses dans un petit espace, comme beaucoup d'événements dans une petite vie.À la suite d'un grand événement, l'attente publique devient un besoin irrésistible qu'il faut satisfaire</h4>
       </div>
     </div>
   </div>
 </div>
-<div class="section section-tabs"  style="background-color: gray;">
+<div class="section section-tabs"  style="background-image: url(../images/bg13.jpg);">
   <div class="container">
     <div class="row">
       <% @event.each do |f| %>
-      <div class="col-md-10 ml-auto col-xl-6 mr-auto">
+      <div class="col-md-10 ml-auto col-xl-6 mr-auto" >
         <p class="category"><%= f.title %></p>
         <!-- Tabs with Background on Card -->
-        <div class="card">
+        <div class="card"  style="background-color:#807f98; height: 400px;" >
           <div class="card-header">
 
           <%if f.avatar.attached?%>
           
-          <%= image_tag f.avatar, alt:''%>
+          <%= image_tag f.avatar, alt:'', width:'550px'%>
 
           <%else%>
           <p> Il n'y a pas encore d'image lié à cet evenement </p>
@@ -35,6 +36,9 @@
              <p><%=  f.description%></p><br>
              <p> Price:<%= f.price %></p><br>
              <p><%= f.location%></p>
+             <p class="lead">
+              <a class="btn btn-info btn-lg" href="/events/<%= f.id%>"f." role="button">Plus..</a>
+            </p>
            </div>
          </div>
        </div>

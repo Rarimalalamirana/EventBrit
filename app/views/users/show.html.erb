@@ -7,12 +7,11 @@
 			</div>
 			<div class="container">
 				<div class="photo-container">
-
+                      
 
 					<%if @user.avatar.attached?%>
-
-					<%= image_tag @user.avatar, alt:''%>
-
+					<%= image_tag @user.avatar, alt:'',:class=>'rounded img-raised' %>
+                  
 					<%else%>
 					<p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
 					<%end%>
@@ -26,8 +25,11 @@
 						<p><%= @user.email%></p>
 					</div>
 					<div class="social-description">
-						<h2>nmbr</h2>
-						<p>Evenement</p>
+						<h2> Evenement creer:<%=@event.count%></h2>
+						<h2>Les evenments</h2>
+						<%@event.each do |m|%>
+						<p><%= link_to "#{m.title}",event_path(m.id),method: :get ,:class=>'link1'%></p>
+						<%end%>
 					</div>
 				</div>
 			</div>

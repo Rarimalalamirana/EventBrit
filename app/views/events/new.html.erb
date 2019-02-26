@@ -1,26 +1,45 @@
- <br> <br> <br> 
- <% if @event.errors.any? %>
- <% @event.errors.full_messages.each do |f| %>
 
- <p> <%= f %></p>
- <% end %>
- <% end %>
-<div class="form">
-<%= form_for @event, url: {action: "create"}, html: {class: "nifty_form"}, multipart: true do |f| %>
-    <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :description %>
-  <%= f.text_field :description %><br>
-    <%= f.label :duration %>
-  <%= f.text_field :duration %><br>
-    <%= f.label :Start_date %>
-  <%= f.date_field :start_date %><br>
-    <%= f.label :Location %>
-  <%= f.text_field :location %><br>
-    <%= f.label :Price %>
-  <%= f.text_field :price %><br>
-    <%= f.file_field :avatar %><br>
-  <%= f.submit "Create" %>
-<% end %>
+<div class="page-header clear-filter" filter-color="violet">
+  <div class="page-header-image" style="background-image:url(../images/bg8.jpg)"></div>
+  <div class="content">
+    <% if @event.errors.any? %>
+    <% @event.errors.full_messages.each do |f| %>
 
+    <p> <%= f %></p>
+    <% end %>
+    <% end %>
+    <div class="container">
+      <div class="col-md-4 ml-auto mr-auto">
+        <div class="card card-login card-plain" >
+
+          <%= form_for @event, url: {action: "create"}, multipart: true do |f| %>
+          <div class="card-header text-center">
+            <h3>new event</h3>
+          </div>
+          <div class="input-group no-border input-lg">  
+            <%= f.text_field :title , autofocus: true, autocomplete: "email",:class=>'form-control',:placeholder=>'titre' %>
+          </div>
+          <div class="input-group no-border input-lg">  
+            <%= f.text_field :description , autofocus: true, autocomplete: "email",:class=>'form-control',:placeholder=>'description..'%>
+          </div>
+          <div class="input-group no-border input-lg">  
+            <%= f.text_field :duration , autofocus: true, autocomplete: "email",:class=>'form-control',:placeholder=>'Duration'%>
+          </div>
+          <div class="input-group no-border input-lg">  
+            <%= f.date_field :start_date, autofocus: true, autocomplete: "email",:class=>'form-control',:placeholder=>'Start_date'%>
+          </div>
+          <div class="input-group no-border input-lg">  
+            <%= f.text_field :location , autofocus: true, autocomplete: "email",:class=>'form-control',:placeholder=>'Location'%>
+          </div>
+          <div class="input-group no-border input-lg">  
+            <%= f.text_field :price , autofocus: true, autocomplete: "email",:class=>'form-control',:placeholder=>'Price'%>
+          </div>
+          <%= f.file_field :avatar %>
+          <%= f.submit "Create" %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

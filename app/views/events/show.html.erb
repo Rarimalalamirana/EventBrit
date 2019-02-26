@@ -1,29 +1,42 @@
- <br> <br> <br><br><br>
-   <% if flash[:notice].present? %>
+ <body class="profile-page sidebar-collapse">
+
+ <% if flash[:notice].present? %>
  <div id="error_explanation">
-        <p><%= flash[:notice] %></p>
-      </div>
-      <% end %>
-   <%if @event.avatar.attached?%>
+  <p><%= flash[:notice] %></p>
+</div>
+<% end %>
+<div class="wrapper">
+  <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header-image" data-parallax="true" style="background-image:url('../images/bg.jpg');">
+    </div>
+    <%= render "./admin/index" %>
+    <div class="container">
+      <div class="photo-container">
+         <%if @event.avatar.attached?%>
         <%= image_tag @event.avatar, alt: 'avatar' %>
 
-   <%else%>
+         <%else%>
          <p>=== Il n'y a pas encore d'avatar lié à cet evenement ===</p>
-   <%end%>
-<h1 class="display-3"><%= @event.title %></h1>
-      <p class="lead"><%=@event.description %></p>
-     <hr class="my-4">
-      <p>Price:<%= @event.price %><br>
-     Location:<%= @event.location%><br>
-     Administrator:<%=@event.user.last_name %>- <%= @event.user.first_name %><br>
-     Start_date:<%= @event.start_date%><br>
-     <hr>
-     <% if current_user %>
-<%if @event.user == current_user%><hr><hr>
-Voici tous les participant:
+         <% end %>
+       </div>
+       <h1 class="title"><%= @event.title %></h1>
+      <p class="category"><%=@event.location %></p>
+      <div class="content">
+        <div class="social-description">
+          <h2>Description</h2>
+          <p><%= @event.description%></p>
+          <h3>Price:<%= @event.price %></h3>
+          <h3>Administrateur:<%=@event.user.last_name %>- <%= @event.user.first_name %></h3>
+          <h3>Start_date:<%= @event.start_date%></h3>
+      
+  <% if current_user %>
+       <%if @event.user == current_user%><hr><hr>
+      Voici tous les participant:
+      <div>
         <% @event.attendances.each do |l| %>
            <p><%=  l.user.last_name %></p>
-           <% end %><br><hr>
+           <% end %><br>
+           </div>
         <%= link_to "edit",edit_event_path,class: "btn btn-primary", style: "display: inline" %>
         <%= link_to "Delete",@event , method: "delete",class: "btn btn-primary", style: "display: inline",:data=>{:confirm => "Voulez vous vraiment effacer cet evenemant"} %>
 <% elsif @u == current_user%>
@@ -48,6 +61,8 @@ Voici tous les participant:
         data-locale="auto"></script>
     <% end %>
     <% end%>
+      </div>
+      </div>
     <%else %>
      <span>Pour rejoindre cette evenement merci de payer:<%= @event.price.to_f/100%>£</span>
      <p>Avant tout connecter-vous</p>
@@ -56,4 +71,8 @@ Voici tous les participant:
       <hr>
       <a class="btn btn-primary btn-lg" href="/" role="button">Back to list</a>
     </p>
- 
+    </div>
+  </div> 
+</div>
+
+</body>

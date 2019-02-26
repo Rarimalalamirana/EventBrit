@@ -1,32 +1,28 @@
+<div class="page-header clear-filter" filter-color="violet">
+  <div class="page-header-image" style="background-image:url(../images/bg4.jpg)"></div>
 
-  <%= render "./admin/nav" %>
- 
-
-  <div class="page-header clear-filter" filter-color="violet">
-  <div class="page-header-image" style="background-image:url(../images/bg11.jpg)"></div>
   <div class="content">
-    <div class="container">
-<h1>Les utilisateurs</h1>
+   <%= render "./admin/index" %>
+   <div class="container">
+    <h1>Les utilisateurs</h1>
 
 
-<h1>Voici tous les utilisateurs:</h1>
-<% @user.each do |f| %>
-<ul>
-	<li>
-<%if f.avatar.attached? %>
+    <h1>Voici tous les utilisateurs:</h1>
+    <% @user.each do |f| %>
+    <ul style="font-size: 20px">
+     <li>
+      <%if f.avatar.attached? %>
 
-  <%= image_tag f.avatar, alt: 'avatar',:class=>"img"%>
+      <%= image_tag f.avatar, alt: 'avatar',:class=>"img"%>
 
-<%else%>
-  <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
-<%end%>
+      <%else%>
+      <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+      <%end%>
 
 
-	<%= f.last_name %>
-<a class="btn btn-info btn-lg" href="/admin/users/<%= f.id%>"f." role="button">Plus..</a>
-</li>
-</ul>
-<% end %>
-    </div>
-  </div>
+      <%= f.last_name %>
+      <a class="btn btn-info btn-lg" href="/admin/users/<%= f.id%>"f." role="button">Plus..</a>
+    </li>
+  </ul>
+  <% end %>
 </div>

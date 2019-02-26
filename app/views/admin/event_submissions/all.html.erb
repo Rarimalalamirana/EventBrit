@@ -1,40 +1,51 @@
-
-
- <div class="center">
- 	<h1 class="display-3"">Eventbrint</h1>
- 
- 	<h3>Welcome</h3>
- 	<h4>Les evenement à valider </h4>
+<div class="wrapper">
+	<div class="page-header page-header-small">
+		<div class="page-header-image" data-parallax="true" style="background-image: url(/images/bg12.jpg);">
+		</div>
+		<div class="content-center" style="font-style: italic;font-family: 'lucida';">
+			<div class="container">
+				<h1 class="title">EVENT BRINT</h1>
+				<h2>Welcome <%= current_user.first_name %></h2>
+				<h3>LES EVENEMENTS </h3>
+			</div>
+		</div>
 	</div>
- </div>
- <div class="row">
- 	<% @event.each do |f| %>
- 	<div class="col-md-6">
- 		<div class="card " style="width: 35rem;">
+	
+</div>
 
- 			<div class="card-header"> 
- 				<% if f.validated? %>
- 				<h3>Valide</h3>
- 				<% else %>
- 				<h3>Non valider</h3>
- 				<% end %>
- 			 <%if f.avatar.attached?%>
- 				<%= image_tag f.avatar, alt: 'avatar'%>
+	<div class="section section-tabs"  style="background-color:lightblue;">
+		<%= render "./admin/index" %>
+		<div class="container">
+			<div class="row">
+				<% @event.each do |f| %>
+				<div class="col-md-10 ml-auto col-xl-6 mr-auto">
+					<div class="card " style="background-color:#D7DBD1;">
+						<div class="card-header"> 
+							<% if f.validated? %>
+							<h3>Valide</h3>
+							<% else %>
+							<h3>Non valider</h3>
+							<% end %>
+							<%if f.avatar.attached?%>
+							<%= image_tag f.avatar, alt: 'avatar'%>
 
- 				<%else%>
- 				<p>=== Il n'y a pas encore d'avatar lié à cet evenement ===</p>
- 				<%end%>
- 				<br><h2><%= f.title %></h2>
- 			</div>
- 			<div class="card-body">
- 				<h4 class="card-title">Details:<%=  f.description%></h4>
- 				<p class="card-text">Price:<%= f.price %><br>Location:<%= f.location%></p>
+							<%else%>
+							<p>Il n'y a pas encore d'avatar lié à cet evenement </p>
+							<%end%>
+							<br><h2><%= f.title %></h2>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">Details:<%=  f.description%></h4>
+							<p class="card-text">Price:<%= f.price %><br>Location:<%= f.location%></p>
 
- 				<p class="lead">
- 					<a class="btn btn-info btn-lg" href="/admin/event_submissions/<%= f.id%>"f." role="button">Plus..</a>
- 				</p>
- 			</div>
+							<p class="lead">
+								<a class="btn btn-defaul btn-lg" href="/admin/event_submissions/<%= f.id%>"f." role="button">Plus..</a>
+							</p>
+						</div>
 
- 		</div>
- 	</div>
- 	<% end %>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
