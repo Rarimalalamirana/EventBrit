@@ -16,4 +16,4 @@ Tutoriel:
 
 * Un administrateur peut suprimmer un evenement,un utilisateur
 
-voici le lien puo ce projet https://eventbritemm.herukoapp.com
+voici le lien puo ce projet https://eventbritemm.herokuapp.com/
