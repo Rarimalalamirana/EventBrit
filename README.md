@@ -1,24 +1,19 @@
-# README
+# EventBrite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ceci est un projet sur les evenements.
 
-Things you may want to cover:
+Tutoriel:
 
-* Ruby version
+* Iscrription avec un adresse email
 
-* System dependencies
+* Connection 
 
-* Configuration
+* Vous aurez un liste d'evenements disponible
 
-* Database creation
+* Voir le details de chaque evenements et s'abonner en payants le montant donné
 
-* Database initialization
+* Creer un evenement mais avant d'etre publier l'evenement doit etre valider par l'administateur 
 
-* How to run the test suite
+* Un administrateur peut suprimmer un evenement,un utilisateur
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+voici le lien puo ce projet https://eventbritemm.herukoapp.com
